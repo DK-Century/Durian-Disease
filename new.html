@@ -69,7 +69,8 @@
 
         .moreInfoContent {
             display: none; /* Sembunyikan maklumat tambahan secara asal */
-            color: blue;
+            color: black;
+            font-weight: bold;
         }
 
         #additionalInfoContainer {
@@ -207,11 +208,17 @@
 
         // Gulung ke bahagian hasil
         resultElement.scrollIntoView({ behavior: 'smooth' });
+
+        document.getElementById("result").scrollIntoView({ behavior: 'smooth' });
     }
 
     function toggleMoreInfo() {
         var moreInfoElement = document.getElementById("moreInfo");
         moreInfoElement.style.display = (moreInfoElement.style.display === "none") ? "block" : "none";
+
+        if (moreInfoElement.style.display === "block") {
+            moreInfoElement.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 
     function getMoreInfoContent(condition) {
@@ -297,6 +304,7 @@
             default:
                 return "";
         }
+    resultElement.scrollIntoView({ behavior: 'smooth' });
     }
 </script>
 
